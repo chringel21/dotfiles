@@ -1,0 +1,30 @@
+yabai -m config layout bsp
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 10
+
+# mouse settings
+yabai -m config mouse_follows_focus on
+
+yabai -m config mouse_modifier alt
+# left click + drag
+yabai -m config mouse_action1 move
+# right click + drag
+yabai -m config mouse_action2 resize
+
+yabai -m config mouse_drop_action swap
+
+# disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System.*einstellungen$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Rechner$" manage=off
+yabai -m rule --add app="^Enpass.*$" manage=off
+yabai -m rule --add app="^KeePassX.*$" manage=off
