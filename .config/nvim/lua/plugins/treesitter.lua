@@ -3,6 +3,9 @@ return {
   opts = {
     ensure_installed = {
       "vue",
+      "css",
+      "scss",
+      "javascript",
     },
   },
 }
