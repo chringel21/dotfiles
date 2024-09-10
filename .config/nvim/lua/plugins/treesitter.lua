@@ -6,6 +6,7 @@ return {
       "css",
       "scss",
       "javascript",
+      "graphql",
     },
   },
 }
