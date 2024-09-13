@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       vue = { "prettier" },
       css = { "prettier" },
+      graphql = { "prettier" },
     },
   },
 }
