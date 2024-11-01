@@ -86,6 +86,13 @@ config.keys = {
 		key = "x",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
+	-- rotating panes
+	{
+		key = "b",
+		mods = "CTRL",
+		action = wezterm.action.RotatePanes("CounterClockwise"),
+	},
+	{ key = "n", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
 	-- move between split panes
 	split_nav("move", "h"),
 	split_nav("move", "j"),
