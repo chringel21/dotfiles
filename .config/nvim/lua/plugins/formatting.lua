@@ -6,6 +6,7 @@ return {
       vue = { "prettier" },
       css = { "prettier" },
       graphql = { "prettier" },
+      nix = { "nixpkgs-fmt" },
     },
   },
 }
