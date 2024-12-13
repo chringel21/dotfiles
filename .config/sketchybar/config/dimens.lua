@@ -2,7 +2,7 @@ local padding <const> = {
 	background = 8,
 	icon = 8,
 	label = 8,
-	bar = 12,
+	bar = 8,
 	item = 8,
 	popup = 8,
 }
