@@ -13,4 +13,4 @@ require("items.volume")
 require("items.network_speed")
 require("items.wifi")
 
--- require("items.media")
+require("items.media")

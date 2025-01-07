@@ -3,10 +3,11 @@ local settings = require("config.settings")
 
 local whitelist = {
 	["Psst"] = true,
+	["Spotify"] = true,
 }
 
 local media_cover = sbar.add("item", {
-	position = "left",
+	position = "center",
 	background = {
 		image = {
 			string = "media.artwork",
@@ -25,14 +26,14 @@ local media_cover = sbar.add("item", {
 })
 
 local media_artist = sbar.add("item", {
-	position = "left",
+	position = "center",
 	drawing = false,
 	padding_left = 3,
 	padding_right = 0,
 	width = 0,
 	icon = { drawing = false },
 	label = {
-		width = 0,
+		-- width = 0,
 		font = { size = 9 },
 		color = colors.with_alpha(colors.white, 0.6),
 		max_chars = 24,
@@ -41,14 +42,14 @@ local media_artist = sbar.add("item", {
 })
 
 local media_title = sbar.add("item", {
-	position = "left",
+	position = "center",
 	drawing = false,
 	padding_left = 3,
 	padding_right = 0,
 	icon = { drawing = false },
 	label = {
 		font = { size = 11 },
-		width = 0,
+		-- width = 0,
 		max_chars = 35,
 		y_offset = -5,
 	},
@@ -56,7 +57,7 @@ local media_title = sbar.add("item", {
 
 sbar.add("item", {
 	position = "popup." .. media_cover.name,
-	icon = { string = settings.icons.text.media.back },
+	icon = { string = settings.icons.text.media.back, color = settings.colors.white },
 	label = { drawing = false },
 	click_script = "nowplaying-cli previous",
 })
@@ -95,24 +96,24 @@ media_cover:subscribe("media_change", function(env)
 		media_title:set({ drawing = drawing, label = env.INFO.title })
 		media_cover:set({ drawing = drawing })
 
-		if drawing then
-			animate_detail(true)
-			interrupt = interrupt + 1
-			sbar.delay(5, animate_detail)
-		else
-			media_cover:set({ popup = { drawing = false } })
-		end
+		-- if drawing then
+		-- 	animate_detail(true)
+		-- 	interrupt = interrupt + 1
+		-- 	sbar.delay(5, animate_detail)
+		-- else
+		-- 	media_cover:set({ popup = { drawing = false } })
+		-- end
 	end
 end)
 
-media_cover:subscribe("mouse.entered", function(env)
-	interrupt = interrupt + 1
-	animate_detail(true)
-end)
-
-media_cover:subscribe("mouse.exited", function(env)
-	animate_detail(false)
-end)
+-- media_cover:subscribe("mouse.entered", function(env)
+-- 	interrupt = interrupt + 1
+-- 	animate_detail(true)
+-- end)
+--
+-- media_cover:subscribe("mouse.exited", function(env)
+-- 	animate_detail(false)
+-- end)
 
 media_cover:subscribe("mouse.clicked", function(env)
 	media_cover:set({ popup = { drawing = "toggle" } })
