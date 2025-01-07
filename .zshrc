@@ -167,7 +167,13 @@ _fzf_comprun() {
 }
 
 ##################
+# bat (better cat)
+##################
+export BAT_THEME="Catppuccin Mocha"
+
+##################
 # eza (better ls)
+##################
 # make sure to install with
 # brew install eza
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
