@@ -170,6 +170,7 @@ _fzf_comprun() {
 # bat (better cat)
 ##################
 export BAT_THEME="Catppuccin Mocha"
+alias cat="bat"
 
 ##################
 # eza (better ls)
