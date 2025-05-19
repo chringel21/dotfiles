@@ -197,3 +197,5 @@ alias ou="rsync -au $OBISIDAN_VAULT_DIR/* $HOME/Library/Mobile\ Documents/iCloud
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
