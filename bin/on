@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+if [ -z "$1" ]; then
+  echo "Error: Please enter a filename, e.g. \"How to exit vim\"."
+  exit 1
+fi
+
+file_name=$(echo "$1" | tr " " "-")
+formatted_file_name=$(date "+%Y-%m-%-d")_${file_name}.md
+cd "/Users/christian.engel/Nextcloud/obsidian-vault" || exit
+touch "inbox/${formatted_file_name}"
+nvim "inbox/${formatted_file_name}"
+

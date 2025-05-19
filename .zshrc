@@ -179,3 +179,21 @@ alias cat="bat"
 # brew install eza
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --color=always --long --git --icons=always"
+
+##################
+# obsidian
+##################
+
+export OBISIDAN_VAULT_DIR="$HOME/Nextcloud/obsidian-vault"
+
+alias oo="cd $OBISIDAN_VAULT_DIR"
+alias or="nvim $OBISIDAN_VAULT_DIR/inbox/*.md"
+alias ou="rsync -au $OBISIDAN_VAULT_DIR/* $HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/obsidian-vault && rsync -au $HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/obsidian-vault/* $OBISIDAN_VAULT_DIR"
+
+##################
+# $HOME/bin
+##################
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
