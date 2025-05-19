@@ -2,19 +2,6 @@
 local wezterm = require("wezterm")
 local utf8 = require("utf8")
 
--- Session manager
--- https://github.com/danielcopper/wezterm-session-manager.git
-local session_manager = require("wezterm-session-manager/session-manager")
-wezterm.on("save_session", function(window)
-	session_manager.save_state(window)
-end)
-wezterm.on("load_session", function(window)
-	session_manager.load_state(window)
-end)
-wezterm.on("restore_session", function(window)
-	session_manager.restore_state(window)
-end)
-
 -- Workspaces
 wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(window:active_workspace())
@@ -144,11 +131,6 @@ config.keys = {
 	split_nav("resize", "j"),
 	split_nav("resize", "k"),
 	split_nav("resize", "l"),
-
-	-- session manager
-	{ key = "S", mods = "LEADER", action = wezterm.action({ EmitEvent = "save_session" }) },
-	{ key = "L", mods = "LEADER", action = wezterm.action({ EmitEvent = "load_session" }) },
-	{ key = "R", mods = "LEADER", action = wezterm.action({ EmitEvent = "restore_session" }) },
 
 	-- workspaces
 	-- Switch to the default workspace
