@@ -23,16 +23,17 @@ return { -- Autoformat
         return nil
       else
         return {
-          timeout_ms = 500,
+          timeout_ms = 2500,
           lsp_format = 'fallback',
         }
       end
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      js = { 'prettier' },
+      javascript = { 'prettier' },
       vue = { 'prettier' },
       css = { 'prettier' },
+      scss = { 'prettier' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
